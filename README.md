@@ -21,13 +21,13 @@ docker build -t posts-backend .
 ###Starting the container
 
 ```
-docker run -v $(pwd):/app:ro -v /app/node_modules -p 3000:3000 -d --name posts-backend posts-backend
+docker run -v $(pwd):/app:ro -v /app/node_modules --env-file ./.env  -p 3000:3000 -d --name posts-backend posts-backend
 ```
 
-### Stopping the container
+### Stopping the container (-f is force, -v for deleting volume)
 
 ```
-docker rm posts-backend -f
+docker rm posts-backend -fv
 ```
 
 ### Debugging
