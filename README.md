@@ -21,7 +21,7 @@ docker build -t posts-backend .
 ### Docker compose
 
 ```
-docker-compose up -d --build / docker-compose down -v
+docker-compose -f docker-compose.yml -f docker-compose.[selected-env].yml up -d / docker-compose down
 ```
 
 ###Starting the container
