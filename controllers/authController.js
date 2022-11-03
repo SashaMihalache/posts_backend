@@ -11,6 +11,8 @@ exports.signUp = async (req, res, next) => {
       password: hashPassword,
     });
 
+    req.session.user = user;
+
     res.status(201).json({
       status: "success",
       data: {
@@ -46,6 +48,8 @@ exports.login = async (req, res, next) => {
         message: "Password is incorrect",
       });
     }
+
+    req.session.user = user;
 
     res.status(200).json({
       status: "success",
