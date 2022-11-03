@@ -18,6 +18,12 @@ Technologies:
 docker build -t posts-backend .
 ```
 
+### Docker compose
+
+```
+docker-compose up -d --build / docker-compose down -v
+```
+
 ###Starting the container
 
 ```
