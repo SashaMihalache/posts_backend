@@ -51,6 +51,8 @@ async function init() {
 
   connectWithRetry();
 
+  app.enable("trust proxy");
+
   app.use(
     session({
       store: new RedisStore({ client: redisClient }),
@@ -68,7 +70,7 @@ async function init() {
   app.use(express.json());
   app.use(morgan("tiny"));
 
-  app.get("/", (req, res) => {
+  app.get("/api", (req, res) => {
     res.send("<h2>Hello World</h2>");
   });
 
