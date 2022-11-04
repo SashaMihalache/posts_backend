@@ -10,6 +10,7 @@ services:
       - posts-backend
   posts-backend:
     build: .
+    image: sashamihalache/posts-backend
     environment:
       - PORT=3000
     depends_on:
