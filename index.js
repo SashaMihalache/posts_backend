@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const session = require("express-session");
 const redis = require("redis");
 let RedisStore = require("connect-redis")(session);
+const cors = require("cors");
+
 const {
   MONGO_USER,
   MONGO_PASSWORD,
@@ -67,6 +69,7 @@ async function init() {
     })
   );
 
+  app.use(cors({}));
   app.use(express.json());
   app.use(morgan("tiny"));
 
